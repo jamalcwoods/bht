@@ -47,7 +47,6 @@ pullQuestions(function(questions){
         for(let i = 0; i < preloadedQuestions.length; i++){
             list.push(questions[preloadedQuestions[i]])
         }
-        console.log(list)
         resetQuestions(5,list) 
     } else {
         resetQuestions(5,questions) 
@@ -79,6 +78,9 @@ function shareButtonPressed(){
 
 function resetButtonPressed(){
     pullQuestions(function(questions){
+        for(let i = 0; i < currentQuestions.length;i++){
+            questions.splice(currentQuestions[i].id,1)
+        }
         resetQuestions(5,questions) 
     })
 }
