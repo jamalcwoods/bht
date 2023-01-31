@@ -128,6 +128,7 @@ function answerbuttonpressed(event){
         let questionData = currentQuestions[answerkey[answerIndex].answersQuestion]
         document.getElementById("infoQuestion").innerHTML = questionData.question;
         pauseTimer = new Date().getTime();
+        document.getElementById("question" + answerkey[answerIndex].answersQuestion).classList = "questionBox answeredQuestion"
         document.getElementById("infoAnswer").innerHTML = questionData.answer;
         document.getElementById("infoExtra").innerHTML = questionData.extra;
         document.getElementById("questionInfo").classList = ["popupDiv"];
@@ -220,6 +221,7 @@ function populateFields(){
     for(let i = 0;i < currentQuestions.length; i++){
         let questionData = currentQuestions[i]
         document.getElementById("question" + i).firstElementChild.innerHTML = "Question #" + (parseInt(i)+1) + ": " + questionData.question;
+        document.getElementById("question" + i).classList = ["questionBox"]
         let index = Math.floor(Math.random() * currentQuestions.length)
         while(index == i || populated.includes(index)){
             index = Math.floor(Math.random() * currentQuestions.length)

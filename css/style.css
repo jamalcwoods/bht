@@ -70,6 +70,10 @@ body {
     display: none;
 }
 
+.answeredQuestion p {
+    color: green
+}
+
 .popupDiv {
     margin: auto;
     padding: 1%;
