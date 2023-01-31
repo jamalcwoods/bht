@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
+    <script type="module" src="./js/index.js"></script>
+    <title>Black History Trivia</title>
+    
+</head>
+<body>
+    <div id="overlayDivHidden">
+        <div id="questionInfo" class="hidden">
+            <h1>Correct!</h1>
+            <p id="infoQuestion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p id="infoAnswer">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <p id="infoExtra">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+            <button onClick="hideOverlayDivs()">Return To Questions</button>
+        </div>
+        <div id="questionResults" class="hidden">
+            <h1>Questions Complete!</h1>
+            <p id="infoResultsTime">Lorem
+            </p>
+            <p id="infoResultsPerformance">Lorem
+            </p>
+            <button onClick="hideOverlayDivs()">Return To Questions</button>
+        </div>
+        <div id="sharePopup" class="hidden">
+            <h3>Share this image with others to give them the same questions you have! </h3>
+            <div id="qrcode"></div>
+            <p>You can also share the link below:</p>
+            <p id="shareLink">Lorem</p>
+            <button onClick="hideOverlayDivs()">Return To Questions</button>
+        </div>
+    </div>
+    <div id="controlBox">
+        <button id="newGame" onClick="resetButtonPressed()" class="controlButton">Get New Questions</button>
+        <button id="shareGame" onClick="shareButtonPressed()" class="controlButton">Share Questions</button>
+    </div>
+    <div id="statusBox">
+        <h2 id="guessCounter">Guesses Made: 0</h2>
+    </div>
+    <div id="gameContainer">
+        <div id="questionsBox" class="contentBox">
+            <div class="questionBox" id="question0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="questionBox" id="question1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="questionBox" id="question2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="questionBox" id="question3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+            <div class="questionBox" id="question4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            </div>
+        </div>
+        <div id="answersBox" class="contentBox">
+            <div class="answerBox" id="answer0">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="answerButtonContainer">
+                    <button class="answerButton">1</button>
+                    <button class="answerButton">2</button>
+                    <button class="answerButton">3</button>
+                    <button class="answerButton">4</button>
+                    <button class="answerButton">5</button>
+                </div>
+            </div>
+            <div class="answerBox" id="answer1">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="answerButtonContainer">
+                    <button class="answerButton">1</button>
+                    <button class="answerButton">2</button>
+                    <button class="answerButton">3</button>
+                    <button class="answerButton">4</button>
+                    <button class="answerButton">5</button>
+                </div>
+            </div>
+            <div class="answerBox" id="answer2">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="answerButtonContainer">
+                    <button class="answerButton">1</button>
+                    <button class="answerButton">2</button>
+                    <button class="answerButton">3</button>
+                    <button class="answerButton">4</button>
+                    <button class="answerButton">5</button>
+                </div>
+            </div>
+            <div class="answerBox" id="answer3">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="answerButtonContainer">
+                    <button class="answerButton">1</button>
+                    <button class="answerButton">2</button>
+                    <button class="answerButton">3</button>
+                    <button class="answerButton">4</button>
+                    <button class="answerButton">5</button>
+                </div>
+            </div>
+            <div class="answerBox" id="answer4">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="answerButtonContainer">
+                    <button class="answerButton">1</button>
+                    <button class="answerButton">2</button>
+                    <button class="answerButton">3</button>
+                    <button class="answerButton">4</button>
+                    <button class="answerButton">5</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

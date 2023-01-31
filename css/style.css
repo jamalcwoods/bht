@@ -1,0 +1,108 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90vw;
+    margin: auto;
+}
+
+#controlBox {
+    padding-top: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+}
+
+.controlButton {
+    padding: 2%;
+}
+
+#statusBox {
+    margin-top: 2%;
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 80%;
+    border: 2px solid #000000;
+}
+
+#gameContainer {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    width: 100%;
+    border: 2px solid #000000;
+}
+
+.contentBox {
+    padding: 5%;
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#answersBox div p {
+    text-align: center;
+}
+
+#questionsBox div p {
+    text-align: left;
+}
+
+
+.answerButtonContainer {
+    display: flex;
+    justify-content: space-around;
+}
+
+.correctButton {
+    background-color: green;   
+}
+
+.wrongButton {
+    background-color: red;
+}
+
+#overlayDivHidden{
+    display: none;
+}
+
+.popupDiv {
+    margin: auto;
+    padding: 1%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.hidden {
+    display: none;
+}
+
+#overlayDiv {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.3);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column
+}
+
+.popupDiv h1 {
+    text-align: center;
+}
+
+.popupDiv p {
+    text-align: center;
+}
+
+#qrcode {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 5%;
+}
