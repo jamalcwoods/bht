@@ -213,7 +213,26 @@ function checkFinished(){
     }
 }
 
+function arrayShuffle(array){
+    let currentIndex = array.length,  randomIndex;
+        
+        // While there remain elements to shuffle.
+        while (currentIndex != 0) {
+        
+            // Pick a remaining element.
+            randomIndex = Math.floor(Math.random() * currentIndex);
+            currentIndex--;
+        
+            // And swap it with the current element.
+            [array[currentIndex], array[randomIndex]] = [
+            array[randomIndex], array[currentIndex]];
+        }
+        
+        return array;
+}
+
 function populateFields(){
+    console.log("populating fields")
     guesses = 0;
     finished = false;
     pauseTime = 0;
@@ -225,16 +244,12 @@ function populateFields(){
         answerButtons[i].disabled = false
         answerButtons[i].classList = ["answerButton"]
     }
-    let indexes = [0,1,2,3,4]
+    let indexes = arrayShuffle([0,1,2,3,4])
     for(let i = 0;i < currentQuestions.length; i++){
         let questionData = currentQuestions[i]
         document.getElementById("question" + i).firstElementChild.innerHTML = "Question #" + (parseInt(i)+1) + ": " + questionData.question;
         document.getElementById("question" + i).classList = ["questionBox"]
-        let index = indexes[Math.floor(Math.random() * indexes.length)]
-        while(index == i){
-            index = indexes[Math.floor(Math.random() * indexes.length)]
-        }
-        indexes.splice(indexes.indexOf(index),1)
+        let index = indexes[i]
         document.getElementById("answer" + index).firstElementChild.innerHTML = questionData.answer;
         answerkey[index] = {
             answersQuestion: i,
