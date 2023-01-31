@@ -219,16 +219,16 @@ function populateFields(){
         answerButtons[i].disabled = false
         answerButtons[i].classList = ["answerButton"]
     }
-    let populated = []
+    let indexes = [0,1,2,3,4]
     for(let i = 0;i < currentQuestions.length; i++){
         let questionData = currentQuestions[i]
         document.getElementById("question" + i).firstElementChild.innerHTML = "Question #" + (parseInt(i)+1) + ": " + questionData.question;
         document.getElementById("question" + i).classList = ["questionBox"]
-        let index = Math.floor(Math.random() * currentQuestions.length)
-        while(index == i || populated.includes(index)){
-            index = Math.floor(Math.random() * currentQuestions.length)
+        let index = indexes[Math.floor(Math.random() * indexes.length)]
+        while(index == i){
+            index = indexes[Math.floor(Math.random() * indexes.length)]
         }
-        populated.push(index)
+        indexes.splice(indexes.indexOf(index),1)
         document.getElementById("answer" + index).firstElementChild.innerHTML = questionData.answer;
         answerkey[index] = {
             answersQuestion: i,
