@@ -23,6 +23,7 @@ if(urlParams.get("q") != undefined){
     preloadedQuestions = urlParams.get("q").split(",")
 }
 
+let cachedQuestions;
 let finished = false;
 let finalTime = 0
 let pauseTimer = 0
@@ -42,6 +43,7 @@ for(let i = 0; i < answerButtons.length; i++){
 }
 
 pullQuestions(function(questions){
+    cachedQuestions = questions
     if(preloadedQuestions && preloadedQuestions[4] != undefined){
         let list = []
         for(let i = 0; i < preloadedQuestions.length; i++){
@@ -77,17 +79,16 @@ function shareButtonPressed(){
 }
 
 function resetButtonPressed(){
-    pullQuestions(function(questions){
-        for(let i = 0; i < currentQuestions.length;i++){
-            for(let x = 0; x < questions.length; x ++){
-                if(questions[x].id == currentQuestions[i].id){
-                    questions.splice(x,1)
-                    break;
-                }
+    let questions = [...cachedQuestions]
+    for(let i = 0; i < currentQuestions.length;i++){
+        for(let x = 0; x < questions.length; x ++){
+            if(questions[x].id == currentQuestions[i].id){
+                questions.splice(x,1)
+                break;
             }
         }
-        resetQuestions(5,questions) 
-    })
+    }
+    resetQuestions(5,questions) 
 }
 
 function pullQuestions(callback){
