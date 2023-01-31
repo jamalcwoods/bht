@@ -79,7 +79,12 @@ function shareButtonPressed(){
 function resetButtonPressed(){
     pullQuestions(function(questions){
         for(let i = 0; i < currentQuestions.length;i++){
-            questions.splice(currentQuestions[i].id,1)
+            for(let x = 0; x < questions.length; x ++){
+                if(questions[x].id == currentQuestions[i].id){
+                    questions.splice(x,1)
+                    break;
+                }
+            }
         }
         resetQuestions(5,questions) 
     })
