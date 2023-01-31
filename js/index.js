@@ -17,7 +17,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getDatabase(app);
 
-console.log(window.location)
 let urlParams = new URLSearchParams(window.location.search)
 let preloadedQuestions;
 if(urlParams.get("q") != undefined){
@@ -43,7 +42,6 @@ for(let i = 0; i < answerButtons.length; i++){
 }
 
 pullQuestions(function(questions){
-    console.log(questions)
     if(preloadedQuestions && preloadedQuestions[4] != undefined){
         let list = []
         for(let i = 0; i < preloadedQuestions.length; i++){
@@ -198,7 +196,7 @@ function checkFinished(){
         if(guesses == 5){
             performance = "Perfect!"
         } else {
-            performance = guesses + " Incorrect Answers"
+            performance = (guesses - 5) + " Incorrect Answers"
         }
         document.getElementById("infoResultsPerformance").innerHTML = performance 
         document.getElementById("overlayDivHidden").id = "overlayDiv"
@@ -210,6 +208,7 @@ function populateFields(){
     guesses = 0;
     finished = false;
     pauseTime = 0;
+    pauseTimer = 0;
     finalTime = 0;
     updateGuesses()
     document.getElementById("guessCounter").innerHTML = "Guesses Made: " + guesses
