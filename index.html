@@ -4,7 +4,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="Embed Title" property="og:title" />
+    <meta content="Site Description" property="og:description" />
+    <meta content="https://embed.com/this-is-the-site-url" property="og:url" />
+    <meta content="https://embed.com/embedimage.png" property="og:image" />
+    <meta content="#43B581" data-react-helmet="true" name="theme-color" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+    <link rel="manifest" href="images/favicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
     <script src="https://cdn.jsdelivr.net/gh/davidshimjs/qrcodejs/qrcode.min.js"></script>
     <script type="module" src="./js/index.js"></script>
     <title>Black History Trivia</title>
@@ -20,7 +45,7 @@
             </p>
             <p id="infoExtra">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
             </p>
-            <button onClick="hideOverlayDivs()">Return To Questions</button>
+            <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
         </div>
         <div id="questionResults" class="hidden">
             <h1>Questions Complete!</h1>
@@ -28,21 +53,28 @@
             </p>
             <p id="infoResultsPerformance">Lorem
             </p>
-            <button onClick="hideOverlayDivs()">Return To Questions</button>
+            <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
         </div>
         <div id="sharePopup" class="hidden">
             <h3>Share this image with others to give them the same questions you have! </h3>
             <div id="qrcode"></div>
             <p>You can also share the link below:</p>
             <p id="shareLink">Lorem</p>
-            <button onClick="hideOverlayDivs()">Return To Questions</button>
+            <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
+        </div>
+        <div id="howtoPlayPopup" class="hidden">
+            <h3>How To Play:</h3>
+            <img id="htpGif" src="images/htp.gif">
+            <p id="howtoPlayText">Questions are listed on the left.<br>Answers are listed on the right.<br>To answer a question, click on the number under an answer that matches the question you are answering.</p>
+            <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
         </div>
     </div>
     <div id="controlBox">
         <button id="newGame" onClick="resetButtonPressed()" class="controlButton">Get New Questions</button>
+        <button id="howToPlay" onClick="howToPlayPressed()" class="controlButton">How To Play</button>
         <button id="shareGame" onClick="shareButtonPressed()" class="controlButton">Share Questions</button>
     </div>
-    <h1>Black History Trivia</h1>
+    <h1 id="titleText">Black History Trivia</h1>
     <div id="statusBox">
         <h2 id="guessCounter">Guesses Made: 0</h2>
     </div>
@@ -66,7 +98,7 @@
         </div>
         <div id="answersBox" class="contentBox">
             <div class="answerBox" id="answer0">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Answer</h2>
                 <div class="answerButtonContainer">
                     <button class="answerButton">1</button>
                     <button class="answerButton">2</button>
@@ -76,7 +108,7 @@
                 </div>
             </div>
             <div class="answerBox" id="answer1">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Answer</h2>
                 <div class="answerButtonContainer">
                     <button class="answerButton">1</button>
                     <button class="answerButton">2</button>
@@ -86,7 +118,7 @@
                 </div>
             </div>
             <div class="answerBox" id="answer2">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Answer</h2>
                 <div class="answerButtonContainer">
                     <button class="answerButton">1</button>
                     <button class="answerButton">2</button>
@@ -96,7 +128,7 @@
                 </div>
             </div>
             <div class="answerBox" id="answer3">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Answer</h2>
                 <div class="answerButtonContainer">
                     <button class="answerButton">1</button>
                     <button class="answerButton">2</button>
@@ -106,7 +138,7 @@
                 </div>
             </div>
             <div class="answerBox" id="answer4">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <h2>Answer</h2>
                 <div class="answerButtonContainer">
                     <button class="answerButton">1</button>
                     <button class="answerButton">2</button>

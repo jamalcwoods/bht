@@ -35,6 +35,7 @@ let answerkey = {}
 window.answerbuttonpressed = answerbuttonpressed;
 window.shareButtonPressed = shareButtonPressed;
 window.resetButtonPressed = resetButtonPressed;
+window.howToPlayPressed = howToPlayPressed;
 window.hideOverlayDivs = hideOverlayDivs;
 
 let answerButtons = document.getElementsByClassName("answerButton");
@@ -55,8 +56,18 @@ pullQuestions(function(questions){
     }
 })
 
-function shareButtonPressed(){
+function triggerPause(){
     pauseTimer = new Date().getTime();
+}
+
+function howToPlayPressed(){
+    triggerPause()
+    document.getElementById("howtoPlayPopup").classList = ["popupDiv"];
+    document.getElementById("overlayDivHidden").id = "overlayDiv"
+}
+
+function shareButtonPressed(){
+    triggerPause()
     let qString = window.location.origin + window.location.pathname + "?q="
     for(let i = 0; i < currentQuestions.length;i ++){
         if(i == 0){
@@ -128,14 +139,14 @@ function answerbuttonpressed(event){
         for(let i = 0; i < answerButtons.length; i++){
             let buttonObj = answerButtons[i]
             if(parseInt(buttonObj.innerHTML) - 1 == questionIndex || event.target.parentElement == buttonObj.parentElement){
-                buttonObj.disabled = true
-                
+                buttonObj.disabled = true;
+                buttonObj.classList.remove("activeButton")
             }
         }
         answerkey[answerIndex].answered = true
         let questionData = currentQuestions[answerkey[answerIndex].answersQuestion]
         document.getElementById("infoQuestion").innerHTML = questionData.question;
-        pauseTimer = new Date().getTime();
+        triggerPause()
         document.getElementById("question" + answerkey[answerIndex].answersQuestion).classList = "questionBox answeredQuestion"
         document.getElementById("infoAnswer").innerHTML = questionData.answer;
         document.getElementById("infoExtra").innerHTML = questionData.extra;
@@ -152,6 +163,7 @@ function hideOverlayDivs(){
     document.getElementById("questionInfo").classList = ["hidden"];
     document.getElementById("questionResults").classList = ["hidden"];
     document.getElementById("sharePopup").classList = ["hidden"];
+    document.getElementById("howtoPlayPopup").classList = ["hidden"];
     document.getElementById("qrcode").innerHTML = ""
     let now = new Date().getTime();
     pauseTime += now - pauseTimer;
@@ -247,7 +259,7 @@ function populateFields(){
     let indexes = arrayShuffle([0,1,2,3,4])
     for(let i = 0;i < currentQuestions.length; i++){
         let questionData = currentQuestions[i]
-        document.getElementById("question" + i).firstElementChild.innerHTML = "Question #" + (parseInt(i)+1) + ": " + questionData.question;
+        document.getElementById("question" + i).firstElementChild.innerHTML = "Question #" + (parseInt(i)+1) + ": <br>" + questionData.question;
         document.getElementById("question" + i).classList = ["questionBox"]
         let index = indexes[i]
         document.getElementById("answer" + index).firstElementChild.innerHTML = questionData.answer;
