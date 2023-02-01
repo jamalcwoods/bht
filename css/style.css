@@ -24,6 +24,7 @@ p {
     background-color: #FFE6A7;
     margin: 0;
     text-align: center;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 #controlBox {
@@ -72,13 +73,14 @@ p {
     background-color: #3DB441;
     border-color: #FFE6A7;
     border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .controlButton {
   background-color: initial;
   background-image: linear-gradient(-180deg, #F13E28, #892217);
   border-radius: 6px;
-  box-shadow: rgba(0, 0, 0, 0.1) 0 2px 4px;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   display: inline-block;
   height: 40px;
@@ -94,10 +96,11 @@ p {
   transition: box-shadow .2s;
   font-size: 20px;
   font-family: 'Sofia Sans Extra Condensed', sans-serif;
+
 }
 
 .controlButton:hover {
-  box-shadow: rgba(253, 76, 0, 0.5) 0 3px 8px;
+  transform: scale(1.2);
 }
 
 .answerButton {
@@ -143,6 +146,7 @@ p {
     background-color: #FDB03F;
     border-color: #F13E28;
     border-radius: 10px;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
 }
 
 .contentBox {
@@ -201,6 +205,7 @@ p {
         background-color: #FFE6A7;
         margin: 0;
         text-align: center;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
     }
     
     #htpGif {
