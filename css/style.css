@@ -87,6 +87,7 @@ p {
   line-height: 40px;
   outline: 0;
   overflow: hidden;
+  color: black;
   padding: 0 20px;
   pointer-events: auto;
   text-align: center;
@@ -179,7 +180,7 @@ p {
 
 @media (max-width: 699px) {
     #questionsBox div p {
-        font-size: 16px;
+        font-size: 18px;
         font-family: 'Sofia Sans Extra Condensed', sans-serif;
         text-align: left;
     }
@@ -212,6 +213,29 @@ p {
         width: 100%;
     }
     
+    .controlButton {
+      background-color: initial;
+      background-image: linear-gradient(-180deg, #F13E28, #892217);
+      border-radius: 6px;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.5);
+      cursor: pointer;
+      display: inline-block;
+      height: 40px;
+      line-height: 40px;
+      outline: 0;
+      color: black;
+      overflow: hidden;
+      padding: 0 20px;
+      pointer-events: auto;
+      text-align: center;
+      vertical-align: top;
+      white-space: nowrap;
+      border: 0;
+      transition: box-shadow .2s;
+      font-size: 14px;
+      font-family: 'Sofia Sans Extra Condensed', sans-serif;
+
+    }
     
     .answerButton {
       background: #fff;
