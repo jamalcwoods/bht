@@ -122,20 +122,8 @@ p {
   text-decoration: none;
 }
 
-.answerButton:not(:disabled):hover {
+.answerButton:hover {
   transform: scale(1.2);
-}
-
-.answerButton:not(:disabled):hover:active {
-  transform: scale(1.2);
-}
-
-.answerButton:focus:not(:focus-visible) {
-  outline: 0 solid transparent;
-}
-
-.answerButton:focus:not(:focus-visible):before {
-  border-width: 0;
 }
 
 
@@ -179,6 +167,14 @@ p {
     font-family: 'Sofia Sans Extra Condensed', sans-serif;
 }
 
+.popupDiv h3 {
+    text-align: center;
+}
+
+.popupDiv p{
+    font-size: 30px;
+}
+
 @media (max-width: 699px) {
     #questionsBox div p {
         font-size: 18px;
@@ -193,7 +189,7 @@ p {
     }
     
     #statusBox h2 {
-        font-size: 14px;
+        font-size: 18px;
         letter-spacing: 1px;
         text-align: center;
         font-family: 'Sofia Sans Extra Condensed', sans-serif;
@@ -254,6 +250,11 @@ p {
       text-align: left;
       text-decoration: none;
     }
+    
+
+    .popupDiv p{
+        font-size: 20px;
+    }
 }
 
 
@@ -284,10 +285,6 @@ p {
     background-color: #FFE6A7;
     display: flex;
     flex-direction: column;
-}
-
-.popupDiv h3 {
-    text-align: center;
 }
 
 .hidden {

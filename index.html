@@ -7,6 +7,7 @@
     <meta content="Black History Trivia" property="og:title" />
     <meta content="Learn Black History" property="og:description" />
     <meta name="og:image" itemprop="image" content="images/icon.png">
+    <meta data-rh="true" property="og:image" content="images/icon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Sofia+Sans+Extra+Condensed&display=swap" rel="stylesheet">
@@ -34,7 +35,7 @@
     
 </head>
 <body>
-    <div id="overlayDivHidden">
+    <div id="overlayDiv">
         <div id="questionInfo" class="hidden">
             <h1>Correct!</h1>
             <p id="infoQuestion">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -60,11 +61,11 @@
             <p id="shareLink">Lorem</p>
             <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
         </div>
-        <div id="howtoPlayPopup" class="hidden">
+        <div id="howtoPlayPopup" class="popupDiv">
             <h3>How To Play:</h3>
             <img id="htpGif" src="images/htp.gif">
             <p id="howtoPlayText">Questions are listed on the left.<br>Answers are listed on the right.<br>To answer a question, click on the number under an answer that matches the question you are answering.</p>
-            <button class="returnButton" onClick="hideOverlayDivs()">Return To Questions</button>
+            <button class="returnButton" onClick="hideOverlayDivs()">Let's Play!</button>
         </div>
     </div>
     <div id="controlBox">
