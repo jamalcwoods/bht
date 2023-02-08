@@ -140,7 +140,6 @@ function answerbuttonpressed(event){
             let buttonObj = answerButtons[i]
             if(parseInt(buttonObj.innerHTML) - 1 == questionIndex || event.target.parentElement == buttonObj.parentElement){
                 buttonObj.disabled = true;
-                buttonObj.classList.remove("activeButton")
             }
         }
         answerkey[answerIndex].answered = true
