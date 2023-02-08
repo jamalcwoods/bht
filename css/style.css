@@ -284,6 +284,10 @@ p {
     .popupDiv p{
         font-size: 20px;
     }
+    
+    .popupDiv h3{
+        font-size: 20px;
+    }
 }   
 
 .answerButtonContainer {
