@@ -57,7 +57,9 @@ pullQuestions(function(questions){
 })
 
 function triggerPause(){
-    pauseTimer = new Date().getTime();
+    if(firstGuessTime != 0){
+        pauseTimer = new Date().getTime();
+    }
 }
 
 function howToPlayPressed(){
@@ -165,7 +167,9 @@ function hideOverlayDivs(){
     document.getElementById("howtoPlayPopup").classList = ["hidden"];
     document.getElementById("qrcode").innerHTML = ""
     let now = new Date().getTime();
-    pauseTime += now - pauseTimer;
+    if(pauseTimer != 0){
+        pauseTime += now - pauseTimer;
+    }
     if(!finished){
         checkFinished();
     } else {
@@ -248,6 +252,7 @@ function populateFields(){
     finished = false;
     pauseTime = 0;
     pauseTimer = 0;
+    firstGuessTime = 0;
     finalTime = 0;
     updateGuesses()
     document.getElementById("guessCounter").innerHTML = "Guesses Made: " + guesses
