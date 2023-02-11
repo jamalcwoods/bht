@@ -122,7 +122,7 @@ p {
 }
 
 .answerButton:not(:disabled):hover {
-  transform: scale(1.2);
+  transform: scale(1.5);
 }
 
 .answerButton:disabled {
